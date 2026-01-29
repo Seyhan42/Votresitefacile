@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon compte | VOTRESITEFACILE</title>
+    <meta
+      name="description"
+      content="Gestion du compte client VOTRESITEFACILE."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="nav-backdrop" data-nav-backdrop></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="/">VSF<span>.</span></a>
+        <nav class="nav" id="primary-nav" data-nav>
+          <a href="/produits/">Produits</a>
+          <a href="/qr-code/">QR Code</a>
+          <a href="/carte-digitale/">Carte digitale</a>
+          <a href="/starter-pack/">Starter Pack</a>
+          <a href="/site-vitrine/">Site vitrine</a>
+          <a href="/dashboard/">Dashboard</a>
+          <a class="btn btn-ghost" href="/login/">Connexion</a>
+          <a class="btn btn-primary" href="/produits/">Demarrer</a>
+        </nav>
+        <button
+          class="nav-toggle"
+          data-nav-toggle
+          aria-controls="primary-nav"
+          aria-expanded="false"
+          aria-label="Ouvrir le menu"
+        >
+          <span class="nav-toggle-box" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Mon compte</p>
+          <h1>Gerer votre profil VSF</h1>
+          <p>
+            Mettez a jour vos informations, coordonnees de facturation et
+            preferences de communication.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div class="card reveal">
+            <h2 class="card-title">Informations personnelles</h2>
+            <form style="margin-top: 18px">
+              <div class="form-group">
+                <label for="fullname">Nom complet</label>
+                <input id="fullname" type="text" placeholder="Marie Dupont" />
+              </div>
+              <div class="form-group">
+                <label for="company">Entreprise</label>
+                <input id="company" type="text" placeholder="Studio VSF" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telephone</label>
+                <input id="phone" type="tel" placeholder="+33 6 00 00 00 00" />
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="button">Enregistrer</button>
+                <button class="btn btn-secondary" type="button">
+                  Modifier le mot de passe
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="card reveal">
+            <h2 class="card-title">Facturation</h2>
+            <p class="text-muted">
+              Les informations Stripe seront disponibles lors du lancement.
+            </p>
+            <ul class="list-check" style="margin-top: 18px">
+              <li>Gestion des abonnements</li>
+              <li>Telechargement des factures</li>
+              <li>Moyens de paiement securises</li>
+            </ul>
+            <div class="form-actions" style="margin-top: 18px">
+              <button class="btn btn-secondary" type="button">Mettre a jour</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="logo">VSF<span>.</span></div>
+          <p style="margin: 16px 0 0; max-width: 320px">
+            Gestion du compte client et preferences de paiement.
+          </p>
+        </div>
+        <div>
+          <strong>Produits</strong>
+          <ul style="margin-top: 14px">
+            <li><a href="/qr-code/">QR Code</a></li>
+            <li><a href="/carte-digitale/">Carte digitale</a></li>
+            <li><a href="/starter-pack/">Starter Pack</a></li>
+            <li><a href="/site-vitrine/">Site vitrine</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Plateforme</strong>
+          <ul style="margin-top: 14px">
+            <li><a href="/dashboard/">Dashboard</a></li>
+            <li><a href="/mes-produits/">Mes produits</a></li>
+            <li><a href="/mon-compte/">Mon compte</a></li>
+            <li><a href="/login/">Connexion</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Support</strong>
+          <ul style="margin-top: 14px">
+            <li><a href="mailto:hello@votresitefacile.fr">hello@votresitefacile.fr</a></li>
+            <li><a href="/produits/">Besoin d'aide ?</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 40px">
+        <small>© <span data-year></span> VOTRESITEFACILE.</small>
+      </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

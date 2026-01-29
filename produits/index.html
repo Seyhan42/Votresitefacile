@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produits | VOTRESITEFACILE</title>
+    <meta
+      name="description"
+      content="Catalogue des produits digitaux VSF : QR codes, cartes digitales, starter pack et sites vitrines."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="nav-backdrop" data-nav-backdrop></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="/">VSF<span>.</span></a>
+        <nav class="nav" id="primary-nav" data-nav>
+          <a href="/produits/">Produits</a>
+          <a href="/qr-code/">QR Code</a>
+          <a href="/carte-digitale/">Carte digitale</a>
+          <a href="/starter-pack/">Starter Pack</a>
+          <a href="/site-vitrine/">Site vitrine</a>
+          <a href="/dashboard/">Dashboard</a>
+          <a class="btn btn-ghost" href="/login/">Connexion</a>
+          <a class="btn btn-primary" href="/produits/">Demarrer</a>
+        </nav>
+        <button
+          class="nav-toggle"
+          data-nav-toggle
+          aria-controls="primary-nav"
+          aria-expanded="false"
+          aria-label="Ouvrir le menu"
+        >
+          <span class="nav-toggle-box" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Catalogue VSF</p>
+          <h1>Des produits digitaux pensés pour vendre</h1>
+          <p>
+            Choisissez des solutions professionnelles livrées rapidement avec un
+            espace client complet.
+          </p>
+          <div class="hero-actions" style="margin-top: 24px">
+            <a class="btn btn-primary" href="/login/">Acceder a mon espace</a>
+            <a class="btn btn-secondary" href="/dashboard/">Voir le dashboard</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid grid-2">
+          <article class="card product-card reveal">
+            <span class="tag">QR Code heberge</span>
+            <h2 class="card-title">QR Code personnalise</h2>
+            <p>
+              Page dediee accessible via QR avec edition du nom, texte, photo,
+              logo et liens sociaux.
+            </p>
+            <a class="link-arrow" href="/qr-code/">En savoir plus →</a>
+          </article>
+          <article class="card product-card reveal">
+            <span class="tag">Carte digitale</span>
+            <h2 class="card-title">Carte de visite digitale</h2>
+            <p>
+              Partage instantane, design premium, accessibilite mobile parfaite
+              et mise a jour rapide.
+            </p>
+            <a class="link-arrow" href="/carte-digitale/">En savoir plus →</a>
+          </article>
+          <article class="card product-card reveal">
+            <span class="tag">Starter Pack</span>
+            <h2 class="card-title">Presence web 199€</h2>
+            <p>Landing page + branding express + audit de presence.</p>
+            <a class="link-arrow" href="/starter-pack/">En savoir plus →</a>
+          </article>
+          <article class="card product-card reveal">
+            <span class="tag">Site vitrine</span>
+            <h2 class="card-title">Site vitrine professionnel</h2>
+            <p>
+              Offre complete avec design sur mesure, performance et livraison
+              rapide.
+            </p>
+            <ul class="list-check">
+              <li>À partir de 359,99 €</li>
+              <li>Créé par notre équipe</li>
+              <li>Livraison sous 5 jours maximum</li>
+            </ul>
+            <a class="link-arrow" href="/site-vitrine/">En savoir plus →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container split">
+          <div class="reveal">
+            <p class="eyebrow">Plateforme SaaS</p>
+            <h2 class="section-title">Tout est centralise dans votre dashboard</h2>
+            <p class="text-muted">
+              VSF connecte la vente, la production et la livraison automatique
+              pour une experience sans friction.
+            </p>
+            <ul class="list-check" style="margin-top: 18px">
+              <li>Connexion Stripe + Supabase prevue</li>
+              <li>Gestion des produits digitaux</li>
+              <li>Suivi des commandes en temps reel</li>
+            </ul>
+          </div>
+          <div class="mockup reveal">
+            <div class="mockup-panel">
+              <strong>Tableau de bord</strong>
+              <p class="text-muted" style="margin: 6px 0 0">
+                Une vue claire sur vos ventes et livraisons.
+              </p>
+            </div>
+            <div class="mockup-panel">
+              <div class="badge">12 QR Codes actifs</div>
+              <p style="margin: 8px 0 0">Performance +34% ce mois-ci</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="logo">VSF<span>.</span></div>
+          <p style="margin: 16px 0 0; max-width: 320px">
+            Catalogue premium pour lancer votre presence digitale.
+          </p>
+        </div>
+        <div>
+          <strong>Produits</strong>
+          <ul style="margin-top: 14px">
+            <li><a href="/qr-code/">QR Code</a></li>
+            <li><a href="/carte-digitale/">Carte digitale</a></li>
+            <li><a href="/starter-pack/">Starter Pack</a></li>
+            <li><a href="/site-vitrine/">Site vitrine</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Plateforme</strong>
+          <ul style="margin-top: 14px">
+            <li><a href="/dashboard/">Dashboard</a></li>
+            <li><a href="/mes-produits/">Mes produits</a></li>
+            <li><a href="/mon-compte/">Mon compte</a></li>
+            <li><a href="/login/">Connexion</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Support</strong>
+          <ul style="margin-top: 14px">
+            <li><a href="mailto:hello@votresitefacile.fr">hello@votresitefacile.fr</a></li>
+            <li><a href="/produits/">Prendre un rendez-vous</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 40px">
+        <small>© <span data-year></span> VOTRESITEFACILE.</small>
+      </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>
