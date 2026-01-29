@@ -1,23 +1,30 @@
 /* VSF Design System */
 :root {
+  --blue-400: #3b82f6;
   --blue-500: #2563eb;
   --blue-600: #1d4ed8;
   --blue-700: #1e40af;
+  --indigo-500: #4f46e5;
+  --slate-950: #0b1120;
   --slate-900: #0f172a;
+  --slate-800: #1e293b;
   --slate-700: #334155;
+  --slate-600: #475569;
   --slate-500: #64748b;
   --slate-300: #cbd5f5;
   --gray-50: #f8fafc;
   --gray-100: #f1f5f9;
   --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
   --white: #ffffff;
-  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
-  --shadow-strong: 0 18px 50px rgba(15, 23, 42, 0.16);
+  --shadow-soft: 0 14px 32px rgba(15, 23, 42, 0.08);
+  --shadow-strong: 0 28px 70px rgba(15, 23, 42, 0.18);
+  --radius-xl: 26px;
   --radius-lg: 18px;
   --radius-md: 12px;
   --radius-sm: 8px;
-  --transition-fast: 150ms ease;
-  --transition: 220ms ease;
+  --transition-fast: 140ms ease;
+  --transition: 240ms ease;
 }
 
 *,
@@ -37,6 +44,8 @@ body {
   background: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body.nav-open {
@@ -68,16 +77,16 @@ button {
 }
 
 .container {
-  width: min(1120px, 92%);
+  width: min(1180px, 92%);
   margin: 0 auto;
 }
 
 .section {
-  padding: 96px 0;
+  padding: clamp(72px, 8vw, 112px) 0;
 }
 
 .section-alt {
-  background: var(--gray-50);
+  background: linear-gradient(180deg, var(--gray-50), var(--white));
 }
 
 .eyebrow {
@@ -90,8 +99,9 @@ button {
 }
 
 .section-title {
-  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
   margin: 0 0 12px;
+  line-height: 1.2;
 }
 
 .text-muted {
@@ -104,43 +114,52 @@ button {
   gap: 8px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: var(--gray-100);
-  color: var(--slate-700);
+  background: linear-gradient(
+    120deg,
+    rgba(37, 99, 235, 0.14),
+    rgba(37, 99, 235, 0.04)
+  );
+  color: var(--blue-700);
+  border: 1px solid rgba(37, 99, 235, 0.18);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 999px;
   font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast),
-    background var(--transition);
+    background var(--transition), color var(--transition);
 }
 
 .btn-primary {
-  background: var(--blue-500);
+  background: linear-gradient(120deg, var(--blue-500), var(--indigo-500));
   color: var(--white);
-  box-shadow: 0 12px 20px rgba(37, 99, 235, 0.22);
+  box-shadow: 0 18px 35px rgba(37, 99, 235, 0.28);
 }
 
 .btn-primary:hover {
-  background: var(--blue-600);
-  transform: translateY(-1px);
+  background: linear-gradient(120deg, var(--blue-600), var(--indigo-500));
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.85);
   color: var(--slate-900);
   border: 1px solid var(--gray-200);
+  backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
   box-shadow: var(--shadow-soft);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn-ghost {
@@ -181,7 +200,7 @@ button {
 
 .card {
   background: var(--white);
-  border: 1px solid var(--gray-200);
+  border: 1px solid rgba(226, 232, 240, 0.9);
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--shadow-soft);
@@ -189,7 +208,7 @@ button {
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-strong);
 }
 
@@ -233,7 +252,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 18px 0;
+  padding: 16px 0;
 }
 
 .logo {
@@ -251,11 +270,18 @@ button {
   align-items: center;
   gap: 18px;
   font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .nav a {
   position: relative;
   color: var(--slate-700);
+  padding: 6px 0;
+  transition: color var(--transition);
+}
+
+.nav a:hover {
+  color: var(--slate-900);
 }
 
 .nav a::after {
@@ -312,7 +338,7 @@ body.nav-open .nav-backdrop {
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   color: var(--white);
@@ -330,17 +356,19 @@ body.nav-open .nav-backdrop {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(15, 23, 42, 0.7),
-    rgba(15, 23, 42, 0.5)
-  );
+  background: radial-gradient(
+      circle at 12% 15%,
+      rgba(59, 130, 246, 0.28),
+      transparent 55%
+    ),
+    linear-gradient(120deg, rgba(8, 15, 30, 0.8), rgba(15, 23, 42, 0.55));
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 140px 0 120px;
+  padding: 150px 0 120px;
+  max-width: 720px;
 }
 
 .hero h1 {
@@ -373,7 +401,8 @@ body.nav-open .nav-backdrop {
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  min-width: 200px;
+  min-width: 0;
+  flex: 1 1 200px;
 }
 
 .stat h3 {
@@ -387,8 +416,13 @@ body.nav-open .nav-backdrop {
 }
 
 .page-hero {
-  padding: 120px 0 80px;
-  background: linear-gradient(120deg, var(--gray-50), var(--white));
+  padding: clamp(110px, 12vw, 150px) 0 clamp(60px, 10vw, 90px);
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(37, 99, 235, 0.08),
+      transparent 60%
+    ),
+    linear-gradient(120deg, var(--gray-50), var(--white));
 }
 
 .page-hero h1 {
@@ -420,7 +454,7 @@ body.nav-open .nav-backdrop {
 
 .mockup {
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, #e0ecff, #ffffff);
+  background: linear-gradient(135deg, #e7f0ff, #ffffff);
   padding: 32px;
   border: 1px solid var(--gray-200);
   box-shadow: var(--shadow-soft);
@@ -466,6 +500,16 @@ body.nav-open .nav-backdrop {
   border-radius: var(--radius-sm);
   border: 1px solid var(--gray-200);
   font: inherit;
+  background: var(--white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }
 
 .form-actions {
@@ -495,6 +539,7 @@ body.nav-open .nav-backdrop {
   border: 1px solid var(--gray-200);
   padding: 20px;
   background: var(--white);
+  box-shadow: var(--shadow-soft);
 }
 
 .dashboard-card h3 {
@@ -514,7 +559,7 @@ body.nav-open .nav-backdrop {
 
 .footer {
   padding: 80px 0 40px;
-  background: var(--slate-900);
+  background: linear-gradient(135deg, var(--slate-950), var(--slate-900));
   color: var(--white);
 }
 
@@ -594,16 +639,17 @@ body.nav-open .nav-backdrop {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
-    width: min(88vw, 340px);
+    height: 100dvh;
+    width: min(90vw, 340px);
     flex-direction: column;
     align-items: flex-start;
-    padding: 100px 24px 24px;
+    padding: 96px 22px 24px;
     background: var(--white);
     transform: translateX(110%);
     transition: transform var(--transition);
     box-shadow: var(--shadow-strong);
     z-index: 1000;
+    gap: 16px;
   }
 
   body.nav-open .nav {
@@ -619,7 +665,7 @@ body.nav-open .nav-backdrop {
   }
 
   .header-inner {
-    padding: 14px 0;
+    padding: 12px 0;
   }
 }
 
@@ -636,7 +682,7 @@ body.nav-open .nav-backdrop {
   }
 
   .hero-content {
-    padding: 120px 0 100px;
+    padding: 120px 0 90px;
   }
 
   .hero-stats {
@@ -655,6 +701,55 @@ body.nav-open .nav-backdrop {
 
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-content {
+    padding: 110px 0 80px;
+    text-align: left;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .stat {
+    width: 100%;
+  }
+
+  .nav a {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav .btn {
+    width: 100%;
+  }
+
+  .qr-link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    width: min(92vw, 520px);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 7vw, 2.7rem);
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
   }
 }
 
